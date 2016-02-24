@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-framework="typescript">
+	<head>
+		<meta charset="utf-8">
+		<title>Typescript & AngularJS • TodoMVC</title>
+		<link rel="stylesheet" href="node_modules/todomvc-common/base.css">
+		<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
+		<style>[ng-cloak] { display: none; }</style>
+	</head>
+	<body ng-app="todo">
+		<section class="todoapp" item-storage>
+			<header class="header">
+				<h1>todos</h1>
+                <add-input></add-input>
+			</header>
+			<section class="main" ng-show="itemStorage.list.length" ng-cloak>
+                <mark-all></mark-all>
+                <item-list></item-list>
+			</section>
+			<footer class="footer" ng-show="itemStorage.list.length" ng-cloak>
+                <item-count></item-count>
+                <item-filter></item-filter>
+                <clear-completed></clear-completed> 
+			</footer>
+		</section>
+		<footer class="info">
+            <p>Credit:
+                Jeanie Keonine
+            </p>
+		</footer>
+		<script src="node_modules/todomvc-common/base.js"></script>
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="js/todo.min.js"></script>
+	</body>
+</html>

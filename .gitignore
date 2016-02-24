@@ -1,0 +1,8 @@
+.tscache
+.vscode
+bower_components
+dist
+js
+node_modules
+typings
+*.log
