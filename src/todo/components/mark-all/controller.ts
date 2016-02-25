@@ -7,22 +7,20 @@ module todo.markAll {
 	
 	export class ctrl {
         private allChecked: boolean;
-        private list: TodoItem[];
         
         public static $inject = [ngConstants.SCOPE, ngConstants.FILTERFILTER];
         
-        constructor($scope: todo.IScope, private filter: ng.IFilterFilter) {
-            this.list = $scope.itemStorage.list;
-            $scope.$watch(() => this.list, this.onTodos, true);
+        constructor(private $scope: todo.IScope, private filter: ng.IFilterFilter) {
+            $scope.$watch(() => $scope.itemStorage.list, this.onTodos, true);
         }
         
         onTodos = (list: TodoItem[]): void => {
             var remainingCount = this.filter(list, todo.Filter.ACTIVE).length;
-            this.allChecked = !remainingCount;
+            this.allChecked = list.length > 0 && !remainingCount;
         };
         
 		markAll(): void {
-			this.list.forEach(todoItem => { 
+			this.$scope.itemStorage.list.forEach(todoItem => { 
                 todoItem.completed = this.allChecked; 
             });
 		}

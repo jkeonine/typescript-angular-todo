@@ -4,12 +4,17 @@ module todo.itemStorage.show {
     'use strict'
     
     export class directive implements ng.IDirective {
+        private element: ng.IAugmentedJQuery;
+        
         restrict = 'A';
         require = '^' + todo.itemStorage.directive.NAME;
         link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes, ctrl: IScope): void  => {
-            scope.$watch(() => ctrl.list, (list: TodoItem[]) => {                
-                var toggle = (list.length > 0) ? element.removeClass('ng-hide') : element.addClass('ng-hide');
-            }, true);
+            this.element = element;
+            scope.$watch(() => ctrl.list, this.toggle, true);
+        };
+        
+        toggle = (list: TodoItem[]): void => {
+            this.element.toggleClass('ng-hide', list.length === 0);
         };
         
         static factory(): ng.IDirectiveFactory {
