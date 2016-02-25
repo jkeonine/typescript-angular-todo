@@ -2,6 +2,7 @@
 
 module todo {
     export interface IScope extends ng.IScope {
+        list: TodoItem[],
         itemStorage: IItemStorage,
         $scope: IScopeScope
     }
