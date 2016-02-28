@@ -11,13 +11,11 @@ module todo.itemCount {
         
         public static $inject = [ngConstants.SCOPE, ngConstants.FILTERFILTER];
         
-        constructor($scope: IScope, private filter: ng.IFilterFilter) {
-            $scope.$watch(() => $scope.itemStorage.list, this.onTodos, true);
-        }
-        
-        onTodos = (list: TodoItem[]): void => {
-            this.completed = this.filter(list, todo.Filter.COMPLETE).length;
-            this.total = list.length;
+        constructor($scope: IScope,  filter: ng.IFilterFilter) {
+            $scope.$watch(() => $scope.itemStorage.list, (list: TodoItem[]): void => {
+                this.completed = filter(list, todo.Filter.COMPLETE).length;
+                this.total = list.length;
+            }, true);
         }
     }
 }

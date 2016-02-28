@@ -9,11 +9,9 @@ module todo.clearCompleted {
         public static $inject = [ngConstants.SCOPE, ngConstants.FILTERFILTER];
         
         constructor(private $scope: IScope, private filter: ng.IFilterFilter) {
-            $scope.$watch(() => $scope.itemStorage.list, this.onTodos, true);
-        }
-        
-        onTodos = (list: TodoItem[]): void => {
-            this.show = this.filter(list, todo.Filter.COMPLETE).length > 0;
+            $scope.$watch(() => $scope.itemStorage.list, (list: TodoItem[]): void => {
+                this.show = filter(list, todo.Filter.COMPLETE).length > 0;
+            }, true);
         }
         
 		clear() {

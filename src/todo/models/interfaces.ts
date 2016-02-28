@@ -12,7 +12,7 @@ module todo {
     }
     
     export interface IAddInputCtrl {
-        bindFocus(element: ng.IAugmentedJQuery);
+        bindFocus(element: ng.IAugmentedJQuery, list: TodoItem[]);
     }
     
     export interface IItemStorage {

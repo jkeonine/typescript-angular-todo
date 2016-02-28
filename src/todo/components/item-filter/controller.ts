@@ -7,7 +7,6 @@ module todo.itemFilter {
 
 	export class ctrl {
         private path: string;
-        private itemStorage: IItemStorage;
         
         public static $inject = [ngConstants.SCOPE, ngConstants.LOCATION];
         public static filters = { 
@@ -18,14 +17,10 @@ module todo.itemFilter {
         constructor($scope: todo.IScope, $location: ng.ILocationService) {
 			if ($location.path() === '') $location.path('/');
 
-            this.itemStorage = $scope.itemStorage;
-            
-            $scope.$watch(() => $location.path(), this.onPath);
+            $scope.$watch(() => $location.path(), (path: string): void => {
+                this.path = path.toString();
+                $scope.itemStorage.statusFilter = itemFilter.ctrl.filters[this.path];
+            });
         }
-        
-		onPath = (path: string): void => {
-            this.path = path.toString();
-            this.itemStorage.statusFilter = itemFilter.ctrl.filters[this.path];
-		}
     }
 }

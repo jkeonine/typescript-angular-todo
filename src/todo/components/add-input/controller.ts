@@ -22,8 +22,8 @@ module todo.addInput {
 			this.item = '';
 		}
         
-        bindFocus(element: ng.IAugmentedJQuery): void {
-            if(this.$scope.itemStorage.list.length === 0) {
+        bindFocus(element: ng.IAugmentedJQuery, list: TodoItem[]): void {
+            if(list.length === 0) {
                 var inputElement = element.find('input')[0];
                 inputElement.focus();
             }

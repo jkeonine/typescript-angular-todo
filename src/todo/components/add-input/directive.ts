@@ -16,8 +16,8 @@ module todo.addInput {
         ].join('');
         
         link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes, ctrl: IScope): void  => {
-            scope.$watch(() => scope.itemStorage.list, (newValue: TodoItem[], oldValue: TodoItem[]) => { 
-                ctrl.$scope.addInput.bindFocus(element);
+            scope.$watch(() => scope.itemStorage.list, (list: TodoItem[]) => { 
+                ctrl.$scope.addInput.bindFocus(element, list);
             }, true);
         }
 

@@ -10,14 +10,12 @@ module todo.markAll {
         
         public static $inject = [ngConstants.SCOPE, ngConstants.FILTERFILTER];
         
-        constructor(private $scope: todo.IScope, private filter: ng.IFilterFilter) {
-            $scope.$watch(() => $scope.itemStorage.list, this.onTodos, true);
+        constructor(private $scope: todo.IScope, filter: ng.IFilterFilter) {
+            $scope.$watch(() => $scope.itemStorage.list, (list: TodoItem[]): void => {
+                var remainingCount = filter(list, todo.Filter.ACTIVE).length;
+                this.allChecked = list.length > 0 && !remainingCount;
+            }, true);
         }
-        
-        onTodos = (list: TodoItem[]): void => {
-            var remainingCount = this.filter(list, todo.Filter.ACTIVE).length;
-            this.allChecked = list.length > 0 && !remainingCount;
-        };
         
 		markAll(): void {
 			this.$scope.itemStorage.list.forEach(todoItem => { 
