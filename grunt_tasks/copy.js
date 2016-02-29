@@ -1,16 +1,16 @@
-module.exports = function(destFolder) {
+module.exports = function(pkg) {
     return {
         taskName: 'copy',
         npmTaskName: 'grunt-contrib-copy',
         task: {
             deploy: {
                 files: [
-                    {expand: true, src: ['Procfile'], dest: destFolder, filter: 'isFile'},
-                    {expand: true, src: ['js/todo.min.js'], dest: destFolder, filter: 'isFile'},
-                    {expand: true, src: ['index.html'], dest: destFolder, filter: 'isFile'},
-                    {expand: true, src: ['bower.json'], dest: destFolder, filter: 'isFile'},
-                    {expand: true, src: ['package.json'], dest: destFolder, filter: 'isFile'},
-                    {expand: true, src: ['server.js'], dest: destFolder, filter: 'isFile'}
+                    {expand: true, src: ['Procfile'], dest: pkg.deploymentFolder, filter: 'isFile'},
+                    {expand: true, src: [pkg.uglifyOutput], dest: pkg.deploymentFolder, filter: 'isFile'},
+                    {expand: true, src: ['index.html'], dest: pkg.deploymentFolder, filter: 'isFile'},
+                    {expand: true, src: ['bower.json'], dest: pkg.deploymentFolder, filter: 'isFile'},
+                    {expand: true, src: ['package.json'], dest: pkg.deploymentFolder, filter: 'isFile'},
+                    {expand: true, src: ['server.js'], dest: pkg.deploymentFolder, filter: 'isFile'}
                 ],
             }
         }

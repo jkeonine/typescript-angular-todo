@@ -4,13 +4,15 @@
   "description": "",
   "main": "server.js",
   "deploymentFolder": "C:\\Users\\Jeanie\\Documents\\deployments\\a-heroku",
+  "tsOutput": "js/todo.js",
+  "uglifyOutput": "js/todo.min.js",
   "ports": {
     "dev": 500,
     "prod": 600  
   },
   "scripts": {
-    "prepublish": "tsd install",
 	"postinstall": "bower install",
+    "prepublish": "tsd install",
     "test": "echo \"Error: no test specified\" && exit 0",
     "build": "grunt",
     "start": "forever start server.js"

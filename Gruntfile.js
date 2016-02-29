@@ -3,10 +3,10 @@ module.exports = function(grunt) {
     
     var defaultTasks = [
         require('./grunt_tasks/clean.js')(pkg),
-        require('./grunt_tasks/ts.js'),
-        require('./grunt_tasks/uglify.js'),
+        require('./grunt_tasks/ts.js')(pkg),
+        require('./grunt_tasks/uglify.js')(pkg),
         require('./grunt_tasks/shell.js')(pkg)
-    ]
+    ];
     var config = {};
     defaultTasks.forEach(function(task) {
         setTask(config, task, grunt); 
@@ -16,7 +16,7 @@ module.exports = function(grunt) {
     var runTasks = getRunTasks(config);
 	grunt.registerTask('default', runTasks);	
     
-    var copy = require('./grunt_tasks/copy.js')(pkg.deploymentFolder);
+    var copy = require('./grunt_tasks/copy.js')(pkg);
     setTask(config, copy, grunt);
     grunt.registerTask('deploy', ['clean:build', 'ts', 'uglify', 'clean:deploy', copy.taskName/*, 'shell:deploy'*/]);
     

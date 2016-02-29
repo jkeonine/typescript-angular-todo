@@ -10,9 +10,8 @@ module.exports = function(pkg) {
             deploy: {
                 command: [
                     'cd ' + pkg.deploymentFolder,
-                    , 'npm install --production'
-                    , 'bower install'
-                    //, 'npm start prod'
+                    'npm install --production',
+                    'node server'
                 ].join('&&')
             }
         }  
