@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "deploymentFolder": "C:\\Users\\Jeanie\\Documents\\deployments\\a-heroku",
+  "herokuApp": "polar-brushlands-31830",
   "tsOutput": "js/todo.js",
   "uglifyOutput": "js/todo.min.js",
   "ports": {

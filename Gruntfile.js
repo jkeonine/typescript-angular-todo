@@ -18,7 +18,7 @@ module.exports = function(grunt) {
     
     var copy = require('./grunt_tasks/copy.js')(pkg);
     setTask(config, copy, grunt);
-    grunt.registerTask('deploy', ['clean:build', 'ts', 'uglify', 'clean:deploy', copy.taskName/*, 'shell:deploy'*/]);
+    grunt.registerTask('deploy', ['clean:build', 'ts', 'uglify', 'clean:deploy', copy.taskName, 'shell:deploy']);
     
     var watch = require('./grunt_tasks/watch.js');
     setTask(config, watch, grunt);

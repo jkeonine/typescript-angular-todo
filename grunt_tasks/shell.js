@@ -10,8 +10,11 @@ module.exports = function(pkg) {
             deploy: {
                 command: [
                     'cd ' + pkg.deploymentFolder,
-                    'npm install --production',
-                    'node server'
+                    'git init',
+                    'git add .',
+                    'git commit -m "init"',
+                    'heroku git:remote -a ' + pkg.herokuApp,
+                    'git push heroku master -f'
                 ].join('&&')
             }
         }  
