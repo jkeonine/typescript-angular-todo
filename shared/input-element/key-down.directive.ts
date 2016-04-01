@@ -8,20 +8,17 @@ namespace shared.input.keydown {
 
     const eventName = 'keydown';
 
-    export class directive {
-        constructor() {
-            return <ng.IDirective> {
-                link: ($scope: ng.IScope, element: ng.IAugmentedJQuery, attributes: IAttributes) => {
-                    element.bind(eventName, (event) => {
-                        if (event.keyCode === parseInt(attributes.keyDown)) {
-                            $scope.$apply(attributes.onKeyDown);
-                        }
-                    });
-
-                    $scope.$on(ngConstants.$destroy, () => { element.unbind(eventName); });
+    export class directive implements ng.IDirective {
+        restrict = 'A';
+        link = ($scope: ng.IScope, element: ng.IAugmentedJQuery, attributes: IAttributes) => {
+            element.bind(eventName, (event) => {
+                if (event.keyCode === parseInt(attributes.keyDown)) {
+                    $scope.$apply(attributes.onKeyDown);
                 }
-            };
-        }
+            });
+
+            $scope.$on(ngConstants.$destroy, () => { element.unbind(eventName); });
+        };
         
         static factory(): ng.IDirectiveFactory {
             var directive = () => new shared.input.keydown.directive();
@@ -29,7 +26,7 @@ namespace shared.input.keydown {
             return directive;
         }
         
-        public static get NAME(): string { return 'onKeyDown'; }
+        static get NAME(): string { return 'onKeyDown'; }
     }
     
     interface IAttributes extends ng.IAttributes {

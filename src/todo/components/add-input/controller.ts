@@ -18,12 +18,11 @@ namespace todo.addInput {
 			var item: string = this.item.trim();
 			if (!item.length) return;
             
-            var todoItem: ITodoItem = {
+            this.item = '';
+            this.$scope.itemStorage.list.push(<ITodoItem>{
                 title: item,
                 completed: false
-            };
-            this.$scope.itemStorage.list.push(todoItem);
-			this.item = '';
+            });
 		}
         
         bindFocus(element: ng.IAugmentedJQuery, list: ITodoItem[]): void {

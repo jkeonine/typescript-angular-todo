@@ -27,6 +27,6 @@ namespace todo.addInput {
             return directive;
         }
         
-        public static get NAME(): string { return 'addInput'; }
+        static get NAME(): string { return 'addInput'; }
     }
 }

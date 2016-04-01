@@ -19,6 +19,6 @@ namespace todo.clearCompleted {
             return directive;
         }
         
-        public static get NAME(): string { return 'clearCompleted'; }
+        static get NAME(): string { return 'clearCompleted'; }
     }
 }

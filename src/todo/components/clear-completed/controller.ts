@@ -16,7 +16,7 @@ namespace todo.clearCompleted {
             }, true);
         }
         
-		clear() {
+		clear(): void {
 			this.$scope.itemStorage.list = this.filter(this.$scope.itemStorage.list, todo.Filter.ACTIVE);
 		}
     }

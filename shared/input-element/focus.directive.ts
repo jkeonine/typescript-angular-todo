@@ -6,18 +6,17 @@ var ngConstants = shared.angular.constants;
 namespace shared.input.focus {
 	'use strict';
 
-    export class directive {
-        constructor($timeout: ng.ITimeoutService) {
-            return <ng.IDirective> {
-                link: ($scope: ng.IScope, element: ng.IAugmentedJQuery, attributes: IAttributes) => {
-                    $scope.$watch(attributes.onFocus, newval => {
-                        if (newval) {
-                            $timeout(() => element[0].focus(), 0, false);
-                        }
-                    });
+    export class directive implements ng.IDirective {
+        constructor(private $timeout: ng.ITimeoutService) { }
+        
+        restrict = 'A';
+        link = ($scope: ng.IScope, element: ng.IAugmentedJQuery, attributes: IAttributes) => {
+            $scope.$watch(attributes.onFocus, shouldFocus => {
+                if (shouldFocus) {
+                    this.$timeout(() => element[0].focus(), 0, false);
                 }
-            };
-        }
+            });
+        };
         
         static factory(): ng.IDirectiveFactory {
             var directive = ($timeout) => new shared.input.focus.directive($timeout);
@@ -25,7 +24,7 @@ namespace shared.input.focus {
             return directive;
         }
         
-        public static get NAME(): string { return 'onFocus'; }
+        static get NAME(): string { return 'onFocus'; }
     }
     
     interface IAttributes extends ng.IAttributes {
