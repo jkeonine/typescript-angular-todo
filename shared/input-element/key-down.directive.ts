@@ -1,4 +1,9 @@
-module shared.input.keydown {
+/// <reference path="../../typings/angularjs/angular.d.ts" />
+/// <reference path="../angular/constants.ts" />
+
+var ngConstants = shared.angular.constants;
+
+namespace shared.input.keydown {
 	'use strict';
 
     const eventName = 'keydown';
@@ -13,7 +18,7 @@ module shared.input.keydown {
                         }
                     });
 
-                    $scope.$on('$destroy', () => { element.unbind(eventName); });
+                    $scope.$on(ngConstants.$destroy, () => { element.unbind(eventName); });
                 }
             };
         }

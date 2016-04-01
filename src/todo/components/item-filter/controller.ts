@@ -2,13 +2,13 @@
 
 var ngConstants =  shared.angular.constants;
 
-module todo.itemFilter {
+namespace todo.itemFilter {
 	'use strict';
 
 	export class ctrl {
         private path: string;
         
-        public static $inject = [ngConstants.SCOPE, ngConstants.LOCATION];
+        public static $inject = [ngConstants.$scope, ngConstants.$location];
         public static filters = { 
             '/active': todo.Filter.ACTIVE,
             '/completed': todo.Filter.COMPLETE

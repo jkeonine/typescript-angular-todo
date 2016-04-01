@@ -1,6 +1,6 @@
 /// <reference path="../../_references.ts" />
 
-module todo {
+namespace todo {
     'use strict';
     
     var components = [

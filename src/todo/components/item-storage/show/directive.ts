@@ -1,6 +1,6 @@
 /// <reference path="../../../../../_references.ts" />
 
-module todo.itemStorage.show {
+namespace todo.itemStorage.show {
     'use strict'
     
     export class directive implements ng.IDirective {
@@ -13,7 +13,7 @@ module todo.itemStorage.show {
             scope.$watch(() => ctrl.list, this.toggle, true);
         };
         
-        toggle = (list: TodoItem[]): void => {
+        toggle = (list: ITodoItem[]): void => {
             this.element.toggleClass('ng-hide', list.length === 0);
         };
         

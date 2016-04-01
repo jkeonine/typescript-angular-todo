@@ -1,16 +1,16 @@
 /// <reference path="../../../../_references.ts" />
 
-module todo.itemStorage {
+namespace todo.itemStorage {
     'use strict'
     
     export class service implements todo.IStorageService {
         STORAGE_ID = 'todos-angularjs-typescript';
 
-        get(): TodoItem[] {
+        get(): ITodoItem[] {
             return JSON.parse(localStorage.getItem(this.STORAGE_ID) || '[]');
         }
 
-        put(todos: TodoItem[]) {
+        put(todos: ITodoItem[]) {
             localStorage.setItem(this.STORAGE_ID, JSON.stringify(todos));
         }
         

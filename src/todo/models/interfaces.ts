@@ -1,27 +1,33 @@
 /// <reference path="../../../_references.ts" />
 
-module todo {
+namespace todo {
     export interface IScope extends ng.IScope {
-        list: TodoItem[],
-        itemStorage: IItemStorage,
-        $scope: IScopeScope
+        list: ITodoItem[];
+        itemStorage: IItemStorage;
+        $scope: IScopeScope;
     }
     
     export interface IScopeScope {
-        addInput: IAddInputCtrl
+        addInput: IAddInputCtrl;
+    }
+    
+    export interface ITodoItem {
+        title: string;
+        completed: boolean;
     }
     
     export interface IAddInputCtrl {
-        bindFocus(element: ng.IAugmentedJQuery, list: TodoItem[]);
+        add(): void;
+        bindFocus(element: ng.IAugmentedJQuery, list: ITodoItem[]);
     }
     
     export interface IItemStorage {
-        list: TodoItem[];
+        list: ITodoItem[];
         statusFilter: StatusFilter;
     }
     
     export interface IStorageService {
-		get(): TodoItem[];
-		put(todos: TodoItem[]);
+		get(): ITodoItem[];
+		put(todos: ITodoItem[]);
 	}
 }

@@ -1,6 +1,6 @@
 /// <reference path="../../../../_references.ts" />
 
-module todo.addInput {
+namespace todo.addInput {
     'use strict'
     
     export class module {

@@ -1,6 +1,6 @@
 /// <reference path="../../../../_references.ts" />
 
-module todo.addInput {
+namespace todo.addInput {
     'use strict';
 
     export class directive implements ng.IDirective {
@@ -16,7 +16,7 @@ module todo.addInput {
         ].join('');
         
         link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes, ctrl: IScope): void  => {
-            scope.$watch(() => scope.itemStorage.list, (list: TodoItem[]) => { 
+            scope.$watch(() => scope.itemStorage.list, (list: ITodoItem[]) => { 
                 ctrl.$scope.addInput.bindFocus(element, list);
             }, true);
         }

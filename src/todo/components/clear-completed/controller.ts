@@ -1,15 +1,17 @@
 /// <reference path="../../../../_references.ts" />
 
-module todo.clearCompleted {
+var ngConstants =  shared.angular.constants; 
+
+namespace todo.clearCompleted {
     'use strict';
     
     export class ctrl {
         public show: boolean;
         
-        public static $inject = [ngConstants.SCOPE, ngConstants.FILTERFILTER];
+        public static $inject = [ngConstants.$scope, ngConstants.filterFilter];
         
         constructor(private $scope: IScope, private filter: ng.IFilterFilter) {
-            $scope.$watch(() => $scope.itemStorage.list, (list: TodoItem[]): void => {
+            $scope.$watch(() => $scope.itemStorage.list, (list: ITodoItem[]): void => {
                 this.show = filter(list, todo.Filter.COMPLETE).length > 0;
             }, true);
         }

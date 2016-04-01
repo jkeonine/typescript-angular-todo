@@ -2,19 +2,19 @@
 
 var ngConstants =  shared.angular.constants;
 
-module todo.itemStorage {
+namespace todo.itemStorage {
     'use strict'
     
     export class ctrl {
-        public list: TodoItem[];
+        public list: ITodoItem[];
 		public statusFilter: { completed?: boolean };
         
-		public static $inject = [ngConstants.SCOPE, todo.itemStorage.service.NAME];
+		public static $inject = [ngConstants.$scope, todo.itemStorage.service.NAME];
 
 		constructor(private $scope: ng.IScope, todoStorage: IStorageService) {
 			this.list = todoStorage.get();
 
-			$scope.$watch(() => this.list, (list: TodoItem[]): void => {
+			$scope.$watch(() => this.list, (list: ITodoItem[]): void => {
                 todoStorage.put(list);
             }, true);
 		}

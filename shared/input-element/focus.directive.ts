@@ -1,4 +1,9 @@
-module shared.input.focus {
+/// <reference path="../../typings/angularjs/angular.d.ts" />
+/// <reference path="../angular/constants.ts" />
+
+var ngConstants = shared.angular.constants;
+
+namespace shared.input.focus {
 	'use strict';
 
     export class directive {
@@ -16,7 +21,7 @@ module shared.input.focus {
         
         static factory(): ng.IDirectiveFactory {
             var directive = ($timeout) => new shared.input.focus.directive($timeout);
-            directive.$inject = ['$timeout'];
+            directive.$inject = [ngConstants.$timeout];
             return directive;
         }
         

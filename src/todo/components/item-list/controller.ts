@@ -2,32 +2,32 @@
 
 var ngConstants =  shared.angular.constants;
 
-module todo.itemList {
+namespace todo.itemList {
 	'use strict';
     
 	export class ctrl {
-        private editedTodo: TodoItem;
-        private originalTodo: TodoItem;
+        private editedTodo: ITodoItem;
+        private originalTodo: ITodoItem;
         private reverted: boolean; 
         
-        public static $inject = [ngConstants.SCOPE];
+        public static $inject = [ngConstants.$scope];
         
         constructor(private $scope: todo.IScope) {
             this.editedTodo = null;
         }
         
-        editTodo(todoItem: TodoItem) {
+        editTodo(todoItem: ITodoItem) {
 			this.editedTodo = todoItem;
 			this.originalTodo = angular.extend({}, todoItem);
 		}
 
-		revertEdits(todoItem: TodoItem) {
+		revertEdits(todoItem: ITodoItem) {
             var index = this.$scope.itemStorage.list.indexOf(todoItem);
 			this.$scope.itemStorage.list[index] = this.originalTodo;
 			this.reverted = true;
 		}
 
-		doneEditing(todoItem: TodoItem) {
+		doneEditing(todoItem: ITodoItem) {
 			this.editedTodo = null;
 			this.originalTodo = null;
 			if (this.reverted) {
@@ -41,7 +41,7 @@ module todo.itemList {
 			}
 		}
 
-		removeTodo(todoItem: TodoItem) {
+		removeTodo(todoItem: ITodoItem) {
             var index = this.$scope.itemStorage.list.indexOf(todoItem);
 			this.$scope.itemStorage.list.splice(index, 1);
 		}

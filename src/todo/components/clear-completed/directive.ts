@@ -1,6 +1,6 @@
 /// <reference path="../../../../_references.ts" />
 
-module todo.clearCompleted {
+namespace todo.clearCompleted {
     'use strict';
     
     export class directive implements ng.IDirective {

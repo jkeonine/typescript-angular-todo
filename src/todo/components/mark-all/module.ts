@@ -1,6 +1,6 @@
 /// <reference path="../../../../_references.ts" />
 
-module todo.markAll {
+namespace todo.markAll {
 	'use strict';
     
 	export class module {

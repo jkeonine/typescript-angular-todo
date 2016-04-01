@@ -2,16 +2,16 @@
 
 var ngConstants =  shared.angular.constants;
 
-module todo.markAll {
+namespace todo.markAll {
 	'use strict';
 	
 	export class ctrl {
         private allChecked: boolean;
         
-        public static $inject = [ngConstants.SCOPE, ngConstants.FILTERFILTER];
+        public static $inject = [ngConstants.$scope, ngConstants.filterFilter];
         
         constructor(private $scope: todo.IScope, filter: ng.IFilterFilter) {
-            $scope.$watch(() => $scope.itemStorage.list, (list: TodoItem[]): void => {
+            $scope.$watch(() => $scope.itemStorage.list, (list: ITodoItem[]): void => {
                 var remainingCount = filter(list, todo.Filter.ACTIVE).length;
                 this.allChecked = list.length > 0 && !remainingCount;
             }, true);

@@ -1,4 +1,9 @@
-module shared.input.blur {
+/// <reference path="../../typings/angularjs/angular.d.ts" />
+/// <reference path="../angular/constants.ts" />
+
+var ngConstants = shared.angular.constants;
+
+namespace shared.input.blur {
     'use strict';
     
     export class directive {
@@ -6,7 +11,7 @@ module shared.input.blur {
             return <ng.IDirective> {
                 link: ($scope: ng.IScope, element: ng.IAugmentedJQuery, attributes: IAttributes) => {
                     element.bind('blur', () => { $scope.$apply(attributes.onBlur); });
-                    $scope.$on('$destroy', () => { element.unbind('blur'); });
+                    $scope.$on(ngConstants.$destroy, () => { element.unbind('blur'); });
                 }
             };
         }

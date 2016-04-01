@@ -1,6 +1,6 @@
 /// <reference path="../../../../_references.ts" />
 
-module todo.itemList {
+namespace todo.itemList {
     'use strict';
 
     export class directive implements ng.IDirective {

@@ -2,7 +2,7 @@
 
 import inputElement = shared.input;
 
-module todo.itemList {
+namespace todo.itemList {
     'use strict';
 
     export class module {
