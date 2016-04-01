@@ -1,6 +1,8 @@
-/// <reference path="../../../_references.ts" />
+/// <reference path="../../_references.ts" />
 
 namespace todo {
+    'use strict';
+    
     export interface IScope extends ng.IScope {
         list: ITodoItem[];
         itemStorage: IItemStorage;
@@ -23,11 +25,20 @@ namespace todo {
     
     export interface IItemStorage {
         list: ITodoItem[];
-        statusFilter: StatusFilter;
+        statusFilter: IStatusFilter;
+    }
+    
+    export interface IStatusFilter {
+        completed: boolean;
     }
     
     export interface IStorageService {
 		get(): ITodoItem[];
 		put(todos: ITodoItem[]);
 	}
+    
+    export class Filter {
+        static get COMPLETE(): IStatusFilter { return <IStatusFilter> { completed: true }};
+        static get ACTIVE(): IStatusFilter { return <IStatusFilter> { completed: false }};
+    }
 }

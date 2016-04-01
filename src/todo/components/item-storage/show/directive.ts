@@ -9,12 +9,11 @@ namespace todo.itemStorage.show {
         restrict = 'A';
         require = '^' + todo.itemStorage.directive.NAME;
         link = (scope: IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes, ctrl: IScope): void  => {
-            this.element = element;
-            scope.$watch(() => ctrl.list, this.toggle, true);
+            scope.$watch(() => ctrl.list, (list) => this.toggle(list, element), true);
         };
         
-        toggle = (list: ITodoItem[]): void => {
-            this.element.toggleClass('ng-hide', list.length === 0);
+        toggle(list: ITodoItem[], element: ng.IAugmentedJQuery): void {
+            element.toggleClass('ng-hide', list.length === 0);
         };
         
         static factory(): ng.IDirectiveFactory {

@@ -2,8 +2,7 @@
 
 /// <reference path="./shared/angular/constants.ts" />
 
-/// <reference path="./src/todo/models/interfaces.ts" />
-/// <reference path="./src/todo/models/model.ts" />
+/// <reference path="./src/todo/model.ts" />
 
 /// <reference path="./src/todo/components/item-storage/service.ts" />
 /// <reference path="./src/todo/components/item-storage/controller.ts" />
