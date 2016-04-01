@@ -35,6 +35,6 @@ namespace todo.itemList {
             return directive;
         }
         
-        public static get NAME(): string { return 'itemList'; }
+        static get NAME(): string { return 'itemList'; }
     }
 }

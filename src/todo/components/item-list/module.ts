@@ -6,7 +6,7 @@ namespace todo.itemList {
     'use strict';
 
     export class module {
-        public static get NAME(): string { return 'itemList'; }
+        static get NAME(): string { return 'itemList'; }
     }
     
     angular.module(todo.itemList.module.NAME, [])

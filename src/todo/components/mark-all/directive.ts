@@ -20,6 +20,6 @@ namespace todo.markAll {
             return directive;
         }
         
-        public static get NAME(): string { return 'markAll'; }
+        static get NAME(): string { return 'markAll'; }
     }
 }

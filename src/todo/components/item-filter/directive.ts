@@ -29,6 +29,6 @@ namespace todo.itemFilter {
             return directive;
         }
         
-        public static get NAME(): string { return 'itemFilter'; }
+        static get NAME(): string { return 'itemFilter'; }
     }
 }

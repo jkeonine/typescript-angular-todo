@@ -4,7 +4,7 @@ namespace todo.itemCount {
 	'use strict';
 
 	export class module {
-        public static get NAME(): string { return 'itemCount'; }
+        static get NAME(): string { return 'itemCount'; }
     }
     
     angular.module(todo.itemCount.module.NAME, [])

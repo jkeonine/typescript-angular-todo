@@ -10,7 +10,7 @@ namespace todo.itemList {
         private originalTodo: ITodoItem;
         private reverted: boolean; 
         
-        public static $inject = [ngConstants.$scope];
+        static $inject = [ngConstants.$scope];
         
         constructor(private $scope: todo.IScope) {
             this.editedTodo = null;

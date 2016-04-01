@@ -22,6 +22,6 @@ namespace todo.itemCount {
             return directive;
         }
         
-        public static get NAME(): string { return 'itemCount'; }
+        static get NAME(): string { return 'itemCount'; }
     }
 }

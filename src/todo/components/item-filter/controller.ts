@@ -8,8 +8,8 @@ namespace todo.itemFilter {
 	export class ctrl {
         private path: string;
         
-        public static $inject = [ngConstants.$scope, ngConstants.$location];
-        public static filters = { 
+        static $inject = [ngConstants.$scope, ngConstants.$location];
+        static filters = { 
             '/active': todo.Filter.ACTIVE,
             '/completed': todo.Filter.COMPLETE
         };

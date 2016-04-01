@@ -8,7 +8,7 @@ namespace todo.clearCompleted {
     export class ctrl {
         public show: boolean;
         
-        public static $inject = [ngConstants.$scope, ngConstants.filterFilter];
+        static $inject = [ngConstants.$scope, ngConstants.filterFilter];
         
         constructor(private $scope: IScope, private filter: ng.IFilterFilter) {
             $scope.$watch(() => $scope.itemStorage.list, (list: ITodoItem[]): void => {

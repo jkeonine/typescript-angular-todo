@@ -22,6 +22,6 @@ namespace todo.itemStorage.show {
             return directive;
         }
         
-        public static get NAME(): string { return 'itemStorageShow'; }
+        static get NAME(): string { return 'itemStorageShow'; }
     }
 }

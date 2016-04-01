@@ -4,7 +4,7 @@ namespace todo.addInput {
     'use strict'
     
     export class module {
-        public static get NAME(): string { return 'addInput'; }
+        static get NAME(): string { return 'addInput'; }
     }
     
     angular.module(todo.addInput.module.NAME, [])

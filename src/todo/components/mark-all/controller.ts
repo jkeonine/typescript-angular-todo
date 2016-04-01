@@ -8,7 +8,7 @@ namespace todo.markAll {
 	export class ctrl {
         private allChecked: boolean;
         
-        public static $inject = [ngConstants.$scope, ngConstants.filterFilter];
+        static $inject = [ngConstants.$scope, ngConstants.filterFilter];
         
         constructor(private $scope: todo.IScope, filter: ng.IFilterFilter) {
             $scope.$watch(() => $scope.itemStorage.list, (list: ITodoItem[]): void => {

@@ -4,7 +4,7 @@ namespace todo.itemFilter {
 	'use strict';
     
 	export class module {
-        public static get NAME(): string { return 'itemFilter'; }
+        static get NAME(): string { return 'itemFilter'; }
     }
     
     angular.module(todo.itemFilter.module.NAME, [])

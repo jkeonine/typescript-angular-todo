@@ -8,7 +8,7 @@ namespace todo.addInput {
 	export class ctrl implements IAddInputCtrl {
         private item: string;
         
-        public static $inject = [ngConstants.$scope];
+        static $inject = [ngConstants.$scope];
         
         constructor(private $scope: IScope) {
             this.item = '';
@@ -19,7 +19,7 @@ namespace todo.addInput {
 			if (!item.length) return;
             
             this.item = '';
-            this.$scope.itemStorage.list.push(<ITodoItem>{
+            this.$scope.itemStorage.list.push(<ITodoItem> {
                 title: item,
                 completed: false
             });

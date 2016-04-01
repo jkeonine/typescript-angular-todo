@@ -9,7 +9,7 @@ namespace todo.itemCount {
         private completed: number;
         private total: number;
         
-        public static $inject = [ngConstants.$scope, ngConstants.filterFilter];
+        static $inject = [ngConstants.$scope, ngConstants.filterFilter];
         
         constructor($scope: IScope,  filter: ng.IFilterFilter) {
             $scope.$watch(() => $scope.itemStorage.list, (list: ITodoItem[]): void => {

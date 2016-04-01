@@ -4,7 +4,7 @@ namespace todo.clearCompleted {
     'use strict';
     
     export class module {
-        public static get NAME(): string { return 'clearCompleted'; }
+        static get NAME(): string { return 'clearCompleted'; }
     }
     
     angular.module(todo.clearCompleted.module.NAME, [])

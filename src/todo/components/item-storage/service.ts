@@ -14,6 +14,6 @@ namespace todo.itemStorage {
             localStorage.setItem(this.STORAGE_ID, JSON.stringify(todos));
         }
         
-        public static get NAME(): string { return 'itemStorageService'; }
+        static get NAME(): string { return 'itemStorageService'; }
     }
 }

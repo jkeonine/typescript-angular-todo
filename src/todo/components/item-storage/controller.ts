@@ -9,7 +9,7 @@ namespace todo.itemStorage {
         public list: ITodoItem[];
 		public statusFilter: { completed?: boolean };
         
-		public static $inject = [ngConstants.$scope, todo.itemStorage.service.NAME];
+		static $inject = [ngConstants.$scope, todo.itemStorage.service.NAME];
 
 		constructor(private $scope: ng.IScope, todoStorage: IStorageService) {
 			this.list = todoStorage.get();
