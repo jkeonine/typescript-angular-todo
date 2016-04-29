@@ -17,8 +17,11 @@ module.exports = function(pkg) {
                     'git push heroku master -f'
                 ].join('&&')
             },
-            tsc: {
-                command: 'npm run tsc'
+            tscClient: {
+                command: 'npm run tsc-client'
+            },
+            tscServer: {
+                command: 'npm run tsc-server'
             }
         }  
     };

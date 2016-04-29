@@ -31,10 +31,12 @@ function getRunTasks(config) {
     runTasks[i] = 'clean:build';
     
     i = runTasks.indexOf('shell');
-    runTasks[i] = 'shell:tsc';
+    runTasks[i] = 'shell:tscClient';
     
     i = runTasks.indexOf('copy');
     runTasks[i] = 'copy:public';
+    
+    runTasks.push('shell:tscServer');
     
     runTasks.push('shell:browse');
     

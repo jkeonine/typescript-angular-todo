@@ -16,8 +16,9 @@
     "prepublish": "typings install",
     "test": "echo \"Error: no test specified\" && exit 0",
     "build": "grunt",
-    "tsc": "tsc",
-    "start": "node server/server"
+    "tsc-client": "tsc",
+    "tsc-server": "tsc -p ./server/tsconfig.json",
+    "start": "forever start -w server/server.js"
   },
   "author": "",
   "license": "ISC",

@@ -3,6 +3,11 @@
   "version": false,
   "ambientDependencies": {
     "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#73e2bdb68c47eb79d42aa2ba0cfaaf30f6d7fb1c",
-    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#73e2bdb68c47eb79d42aa2ba0cfaaf30f6d7fb1c"
+    "express": "registry:dt/express#4.0.0+20160317120654",
+    "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160322035842",
+    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#73e2bdb68c47eb79d42aa2ba0cfaaf30f6d7fb1c",
+    "mime": "registry:dt/mime#0.0.0+20160316155526",
+    "node": "registry:dt/node#4.0.0+20160423143914",
+    "serve-static": "registry:dt/serve-static#0.0.0+20160317120654"
   }
 }
