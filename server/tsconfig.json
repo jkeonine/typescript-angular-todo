@@ -4,7 +4,9 @@
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "target": "es5",
+        "outDir": "../js"
     },
     "files": [
         "server.ts"

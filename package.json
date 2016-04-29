@@ -18,7 +18,7 @@
     "build": "grunt",
     "tsc-client": "tsc",
     "tsc-server": "tsc -p ./server/tsconfig.json",
-    "start": "forever start -w server/server.js"
+    "start": "forever start -w js/server.js"
   },
   "author": "",
   "license": "ISC",
