@@ -13,7 +13,7 @@
   },
   "scripts": {
     "postinstall": "bower install",
-    "prepublish": "tsd install",
+    "prepublish": "typings install",
     "test": "echo \"Error: no test specified\" && exit 0",
     "build": "grunt",
     "tsc": "tsc",
@@ -36,8 +36,7 @@
     "grunt-contrib-uglify": "^0.11.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-shell-spawn": "^0.3.10",
-    "grunt-ts": "^5.3.2",
-    "tsd": "^0.6.5",
-    "typescript": "^1.8.10"
+    "typescript": "^1.8.10",
+    "typings": "^0.8.1"
   }
 }

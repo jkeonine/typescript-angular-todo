@@ -1,4 +1,4 @@
-/// <reference path="../../typings/angularjs/angular.d.ts" />
+/// <reference path="../../typings/browser.d.ts" />
 /// <reference path="../angular/constants.ts" />
 
 var ngConstants = shared.angular.constants;
