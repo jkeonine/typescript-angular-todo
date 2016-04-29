@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outFile": "js/todo.js",
+        "sourceMap": true,
+        "target": "es5"
+    },
+    "files": [
+        "src/todo/app.module.ts"
+    ]   
+}

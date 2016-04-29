@@ -3,9 +3,9 @@ module.exports = function(grunt) {
     
     var defaultTasks = [
         require('./grunt_tasks/clean.js')(pkg),
-        require('./grunt_tasks/ts.js')(pkg),
+        require('./grunt_tasks/shell.js')(pkg),
         require('./grunt_tasks/uglify.js')(pkg),
-        require('./grunt_tasks/shell.js')(pkg)
+        require('./grunt_tasks/copy.js')(pkg)
     ];
     var config = {};
     defaultTasks.forEach(function(task) {
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
     
     var copy = require('./grunt_tasks/copy.js')(pkg);
     setTask(config, copy, grunt);
-    grunt.registerTask('deploy', ['clean:build', 'ts', 'uglify', 'clean:deploy', copy.taskName, 'shell:deploy']);
+    grunt.registerTask('deploy', ['clean:build', 'ts', 'uglify', 'clean:deploy', 'copy:deploy', 'shell:deploy']);
     
     var watch = require('./grunt_tasks/watch.js');
     setTask(config, watch, grunt);
@@ -31,7 +31,12 @@ function getRunTasks(config) {
     runTasks[i] = 'clean:build';
     
     i = runTasks.indexOf('shell');
-    runTasks[i] = 'shell:browse';
+    runTasks[i] = 'shell:tsc';
+    
+    i = runTasks.indexOf('copy');
+    runTasks[i] = 'copy:public';
+    
+    runTasks.push('shell:browse');
     
     return runTasks;
 }

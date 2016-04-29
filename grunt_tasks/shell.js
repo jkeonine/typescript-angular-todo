@@ -16,6 +16,9 @@ module.exports = function(pkg) {
                     'heroku git:remote -a ' + pkg.herokuApp,
                     'git push heroku master -f'
                 ].join('&&')
+            },
+            tsc: {
+                command: 'npm run tsc'
             }
         }  
     };

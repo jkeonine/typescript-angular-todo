@@ -19,7 +19,7 @@ namespace shared.input.focus {
         };
         
         static factory(): ng.IDirectiveFactory {
-            var directive = ($timeout) => new shared.input.focus.directive($timeout);
+            var directive = ($timeout: ng.ITimeoutService) => new shared.input.focus.directive($timeout);
             directive.$inject = [ngConstants.$timeout];
             return directive;
         }

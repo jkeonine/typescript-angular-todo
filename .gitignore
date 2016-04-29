@@ -3,5 +3,6 @@
 bower_components
 js
 node_modules
+public
 typings
 *.log

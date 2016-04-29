@@ -9,7 +9,7 @@ namespace todo.itemFilter {
         private path: string;
         
         static $inject = [ngConstants.$scope, ngConstants.$location];
-        static filters = { 
+        static filters: any = { 
             '/active': todo.Filter.ACTIVE,
             '/completed': todo.Filter.COMPLETE
         };

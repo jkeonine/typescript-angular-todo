@@ -20,7 +20,7 @@ namespace todo {
     
     export interface IAddInputCtrl {
         add(): void;
-        bindFocus(element: ng.IAugmentedJQuery, list: ITodoItem[]);
+        bindFocus(element: ng.IAugmentedJQuery, list: ITodoItem[]): void;
     }
     
     export interface IItemStorage {
@@ -34,7 +34,7 @@ namespace todo {
     
     export interface IStorageService {
 		get(): ITodoItem[];
-		put(todos: ITodoItem[]);
+		put(todos: ITodoItem[]): void;
 	}
     
     export class Filter {

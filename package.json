@@ -9,14 +9,15 @@
   "uglifyOutput": "js/todo.min.js",
   "ports": {
     "dev": 500,
-    "prod": 600  
+    "prod": 600
   },
   "scripts": {
-	"postinstall": "bower install",
+    "postinstall": "bower install",
     "prepublish": "tsd install",
     "test": "echo \"Error: no test specified\" && exit 0",
     "build": "grunt",
-    "start": "forever start server.js"
+    "tsc": "tsc",
+    "start": "node server/server"
   },
   "author": "",
   "license": "ISC",
@@ -36,6 +37,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-shell-spawn": "^0.3.10",
     "grunt-ts": "^5.3.2",
-    "tsd": "^0.6.5"
+    "tsd": "^0.6.5",
+    "typescript": "^1.8.10"
   }
 }

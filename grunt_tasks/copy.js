@@ -1,3 +1,5 @@
+var publicDest = './public';
+
 module.exports = function(pkg) {
     return {
         taskName: 'copy',
@@ -12,6 +14,15 @@ module.exports = function(pkg) {
                     {expand: true, src: ['package.json'], dest: pkg.deploymentFolder, filter: 'isFile'},
                     {expand: true, src: ['server.js'], dest: pkg.deploymentFolder, filter: 'isFile'}
                 ],
+            },
+            public: {
+                files: [
+                    {expand: true, flatten: true, src: ['bower_components/angular/angular.min.js'], dest: publicDest, filter: 'isFile'},
+                    {expand: true, flatten: true, src: ['js/todo.min.js'], dest: publicDest, filter: 'isFile'},
+                    {expand: true, flatten: true, src: ['node_modules/todomvc-common/base.js'], dest: publicDest, filter: 'isFile'},
+                    {expand: true, flatten: true, src: ['node_modules/todomvc-common/base.css'], dest: publicDest, filter: 'isFile'},
+                    {expand: true, flatten: true, src: ['node_modules/todomvc-app-css/index.css'], dest: publicDest, filter: 'isFile'}
+                ]
             }
         }
     }
