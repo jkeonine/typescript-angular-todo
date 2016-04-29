@@ -3,12 +3,7 @@
 import * as express from 'express';
 import * as path from 'path';
 
-var pkg = require('../package.json');
-var env = process.argv.slice(2)[0];
-var PORT = pkg.ports[env];
-if(!PORT) {
-    PORT = process.env.PORT || pkg.ports.dev;
-}
+const PORT = 500;
 
 express()
     .get('/', function(req: any, res: any) {
