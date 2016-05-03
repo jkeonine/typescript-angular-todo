@@ -3,7 +3,7 @@ module.exports = {
     npmTaskName: 'grunt-contrib-watch',
     task: {
       express: {
-        files: ['src/**/*.ts'],
+        files: ['server/**/*.ts', 'src/**/*.ts'],
         tasks: ['default'],
         options: {              //Server options
           spawn: false,         //Must have for reload

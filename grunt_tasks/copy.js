@@ -12,7 +12,7 @@ module.exports = function(pkg) {
                     {expand: true, src: ['index.html'], dest: pkg.deploymentFolder, filter: 'isFile'},
                     {expand: true, src: ['bower.json'], dest: pkg.deploymentFolder, filter: 'isFile'},
                     {expand: true, src: ['package.json'], dest: pkg.deploymentFolder, filter: 'isFile'},
-                    {expand: true, src: ['server.js'], dest: pkg.deploymentFolder, filter: 'isFile'}
+                    {expand: true, src: ['js/server.js'], dest: pkg.deploymentFolder, filter: 'isFile'}
                 ],
             },
             public: {
