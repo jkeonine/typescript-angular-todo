@@ -3,34 +3,32 @@
 
 var ngConstants = shared.angular.constants;
 
-namespace shared.input.keydown {
-	'use strict';
+'use strict';
 
-    const eventName = 'keydown';
+const eventName = 'keydown';
 
-    export class directive implements ng.IDirective {
-        restrict = 'A';
-        link = ($scope: ng.IScope, element: ng.IAugmentedJQuery, attributes: IAttributes) => {
-            element.bind(eventName, (event) => {
-                if (event.keyCode === parseInt(attributes.keyDown)) {
-                    $scope.$apply(attributes.onKeyDown);
-                }
-            });
+export const NAME = 'onKeyDown';
 
-            $scope.$on(ngConstants.$destroy, () => { element.unbind(eventName); });
-        };
-        
-        static factory(): ng.IDirectiveFactory {
-            var directive = () => new shared.input.keydown.directive();
-            directive.$inject = [];
-            return directive;
-        }
-        
-        static get NAME(): string { return 'onKeyDown'; }
-    }
+export class directive implements ng.IDirective {
+    restrict = 'A';
+    link = ($scope: ng.IScope, element: ng.IAugmentedJQuery, attributes: IAttributes) => {
+        element.bind(eventName, (event) => {
+            if (event.keyCode === parseInt(attributes.keyDown)) {
+                $scope.$apply(attributes.onKeyDown);
+            }
+        });
+
+        $scope.$on(ngConstants.$destroy, () => { element.unbind(eventName); });
+    };
     
-    interface IAttributes extends ng.IAttributes {
-        keyDown: string;
-        onKeyDown(...args: any[]): any;
+    static factory(): ng.IDirectiveFactory {
+        var d = () => new directive();
+        d.$inject = [];
+        return d;
     }
+}
+
+interface IAttributes extends ng.IAttributes {
+    keyDown: string;
+    onKeyDown(...args: any[]): any;
 }

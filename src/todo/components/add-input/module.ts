@@ -1,12 +1,10 @@
 /// <reference path="../../../../_references.ts" />
 
-namespace todo.addInput {
-    'use strict'
-    
-    export class module {
-        static get NAME(): string { return 'addInput'; }
-    }
-    
-    angular.module(todo.addInput.module.NAME, [])
-        .directive(todo.addInput.directive.NAME, todo.addInput.directive.factory());
-}
+'use strict'
+
+import * as addInput from "./directive";
+
+export const NAME = 'addInput';
+
+angular.module(NAME, [])
+    .directive(addInput.NAME, addInput.directive.factory());

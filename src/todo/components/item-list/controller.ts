@@ -1,5 +1,7 @@
 /// <reference path="../../../../_references.ts" />
 
+import {IScope, ITodoItem} from "../../model";
+
 var ngConstants =  shared.angular.constants;
 
 namespace todo.itemList {
@@ -12,7 +14,7 @@ namespace todo.itemList {
         
         static $inject = [ngConstants.$scope];
         
-        constructor(private $scope: todo.IScope) {
+        constructor(private $scope: IScope) {
             this.editedTodo = null;
         }
         

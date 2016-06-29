@@ -3,26 +3,24 @@
 
 var ngConstants = shared.angular.constants;
 
-namespace shared.input.blur {
-    'use strict';
+'use strict';
+
+export const NAME = 'onBlur';
+
+export class directive implements ng.IDirective {
+    restrict = 'A';
+    link = ($scope: ng.IScope, element: ng.IAugmentedJQuery, attributes: IAttributes) => {
+        element.bind('blur', () => { $scope.$apply(attributes.onBlur); });
+        $scope.$on(ngConstants.$destroy, () => { element.unbind('blur'); });
+    };
     
-    export class directive implements ng.IDirective {
-        restrict = 'A';
-        link = ($scope: ng.IScope, element: ng.IAugmentedJQuery, attributes: IAttributes) => {
-            element.bind('blur', () => { $scope.$apply(attributes.onBlur); });
-            $scope.$on(ngConstants.$destroy, () => { element.unbind('blur'); });
-        };
-        
-        static factory(): ng.IDirectiveFactory {
-            var directive = () => new shared.input.blur.directive();
-            directive.$inject = [];
-            return directive;    
-        }
-        
-        static get NAME(): string {return 'onBlur'; }
+    static factory(): ng.IDirectiveFactory {
+        var d = () => new directive();
+        d.$inject = [];
+        return d;    
     }
-    
-    interface IAttributes extends ng.IAttributes {
-        onBlur(...args: any[]): any; 
-    }
+}
+
+interface IAttributes extends ng.IAttributes {
+    onBlur(...args: any[]): any; 
 }

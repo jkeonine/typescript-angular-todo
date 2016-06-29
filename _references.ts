@@ -2,13 +2,6 @@
 
 /// <reference path="./shared/angular/constants.ts" />
 
-/// <reference path="./src/todo/model.ts" />
-
-/// <reference path="./src/todo/components/item-storage/service.ts" />
-/// <reference path="./src/todo/components/item-storage/controller.ts" />
-/// <reference path="./src/todo/components/item-storage/directive.ts" />
-/// <reference path="./src/todo/components/item-storage/show/directive.ts" />
-/// <reference path="./src/todo/components/item-storage/module.ts" />
 
 /// <reference path="./src/todo/components/add-input/controller.ts" />
 /// <reference path="./src/todo/components/add-input/directive.ts" />

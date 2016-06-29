@@ -3,9 +3,9 @@
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
-        "outFile": "js/todo.js",
         "sourceMap": true,
-        "target": "es5"
+        "target": "es5",
+        "module": "commonjs"
     },
     "files": [
         "src/todo/app.module.ts"

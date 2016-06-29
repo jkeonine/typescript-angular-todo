@@ -1,5 +1,7 @@
 /// <reference path="../../../../_references.ts" />
 
+import {IScope, ITodoItem, Filter} from "../../model";
+
 var ngConstants =  shared.angular.constants;
 
 namespace todo.itemCount {
@@ -13,7 +15,7 @@ namespace todo.itemCount {
         
         constructor($scope: IScope,  filter: ng.IFilterFilter) {
             $scope.$watch(() => $scope.itemStorage.list, (list: ITodoItem[]): void => {
-                this.completed = filter(list, todo.Filter.COMPLETE).length;
+                this.completed = filter(list, Filter.COMPLETE).length;
                 this.total = list.length;
             }, true);
         }

@@ -1,17 +1,16 @@
 /// <reference path="../../../../_references.ts" />
 
-import inputElement = shared.input;
+import * as itemList from "./directive";
+import * as keydown from "../../../../shared/input-element/key-down.directive";
+import * as focus from "../../../../shared/input-element/focus.directive";
+import * as blur from "../../../../shared/input-element/blur.directive";
 
-namespace todo.itemList {
-    'use strict';
+'use strict';
 
-    export class module {
-        static get NAME(): string { return 'itemList'; }
-    }
-    
-    angular.module(todo.itemList.module.NAME, [])
-        .directive(todo.itemList.directive.NAME, todo.itemList.directive.factory())
-        .directive(inputElement.keydown.directive.NAME, inputElement.keydown.directive.factory())
-        .directive(inputElement.focus.directive.NAME, inputElement.focus.directive.factory())
-        .directive(inputElement.blur.directive.NAME, inputElement.blur.directive.factory());
-}
+export const NAME = 'itemList';
+
+angular.module(NAME, [])
+    .directive(itemList.NAME, itemList.directive.factory())
+    .directive(keydown.NAME, keydown.directive.factory())
+    .directive(focus.NAME, focus.directive.factory())
+    .directive(blur.NAME, blur.directive.factory());

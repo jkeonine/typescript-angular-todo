@@ -17,7 +17,7 @@ module.exports = function(pkg) {
             },
             public: {
                 files: [
-                    {expand: true, flatten: true, src: ['bower_components/angular/angular.min.js'], dest: publicDest, filter: 'isFile'},
+                    {expand: true, flatten: true, src: ['node_modules/angular/angular.min.js'], dest: publicDest, filter: 'isFile'},
                     {expand: true, flatten: true, src: ['js/todo.min.js'], dest: publicDest, filter: 'isFile'},
                     {expand: true, flatten: true, src: ['node_modules/todomvc-common/base.js'], dest: publicDest, filter: 'isFile'},
                     {expand: true, flatten: true, src: ['node_modules/todomvc-common/base.css'], dest: publicDest, filter: 'isFile'},

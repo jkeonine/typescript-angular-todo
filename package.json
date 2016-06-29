@@ -23,7 +23,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bower": "^1.7.7",
+    "angular": "^1.5.7",
     "express": "^4.13.4",
     "todomvc-app-css": "^2.0.0",
     "todomvc-common": "^1.0.1"
