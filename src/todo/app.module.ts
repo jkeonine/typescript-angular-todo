@@ -2,19 +2,22 @@
 
 'use strict';
 
-import * as itemStorage from "./components/item-storage/module";
-import * as markAll from "./components/mark-all/module";
-import * as addInput from "./components/add-input/module";
-import * as itemList from "./components/item-list/module";
+import * as itemStorage from './components/item-storage/module';
+import * as markAll from './components/mark-all/module';
+import * as addInput from './components/add-input/module';
+import * as itemList from './components/item-list/module';
+import * as itemCount from './components/item-count/module';
+import * as itemFilter from './components/item-filter/module';
+import * as clearCompleted from './components/clear-completed/module';
 
 var components = [
     itemStorage.NAME,
     markAll.NAME,
     addInput.NAME,
     itemList.NAME, 
-    todo.itemCount.module.NAME,
-    todo.itemFilter.module.NAME,
-    todo.clearCompleted.module.NAME
+    itemCount.NAME,
+    itemFilter.NAME,
+    clearCompleted.NAME
 ];
 
 angular.module('todo', components);

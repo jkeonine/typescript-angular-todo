@@ -1,12 +1,10 @@
 /// <reference path="../../../../_references.ts" />
 
-namespace todo.clearCompleted {
-    'use strict';
-    
-    export class module {
-        static get NAME(): string { return 'clearCompleted'; }
-    }
-    
-    angular.module(todo.clearCompleted.module.NAME, [])
-        .directive(todo.clearCompleted.directive.NAME, todo.clearCompleted.directive.factory());
-}
+'use strict';
+
+import * as clearCompleted from './directive';
+
+export const NAME = 'clearCompleted';
+
+angular.module(NAME, [])
+    .directive(clearCompleted.NAME, clearCompleted.directive.factory());

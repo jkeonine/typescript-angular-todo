@@ -1,12 +1,10 @@
 /// <reference path="../../../../_references.ts" />
 
-namespace todo.itemFilter {
-	'use strict';
-    
-	export class module {
-        static get NAME(): string { return 'itemFilter'; }
-    }
-    
-    angular.module(todo.itemFilter.module.NAME, [])
-        .directive(todo.itemFilter.directive.NAME, todo.itemFilter.directive.factory());
-}
+'use strict';
+
+import * as itemFilter from './directive';
+
+export const NAME = 'itemFilter';
+
+angular.module(NAME, [])
+    .directive(itemFilter.NAME, itemFilter.directive.factory());

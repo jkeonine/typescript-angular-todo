@@ -2,13 +2,16 @@
 
 'use strict';
 
+import * as itemStorage from '../item-storage/directive';
+import * as ctrl from './controller';
+
 export const NAME = 'itemList';
 
 export class directive implements ng.IDirective {
     restrict = 'E';
-    require = '^' + todo.itemStorage.directive.NAME;
-    controller = todo.itemList.ctrl;
-    controllerAs = todo.itemList.directive.NAME;
+    require = '^' + itemStorage.NAME;
+    controller = ctrl.default;
+    controllerAs = NAME;
     bindToController = true;
     template = [
         '<ul class="todo-list">',

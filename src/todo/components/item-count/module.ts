@@ -1,12 +1,10 @@
 /// <reference path="../../../../_references.ts" />
 
-namespace todo.itemCount {
-	'use strict';
+'use strict';
 
-	export class module {
-        static get NAME(): string { return 'itemCount'; }
-    }
-    
-    angular.module(todo.itemCount.module.NAME, [])
-        .directive(todo.itemCount.directive.NAME, todo.itemCount.directive.factory());
-}
+import * as itemCount from './directive';
+
+export const NAME = 'itemCount';
+
+angular.module(NAME, [])
+    .directive(itemCount.NAME, itemCount.directive.factory());
