@@ -30,8 +30,8 @@ function getRunTasks(config) {
     var i = runTasks.indexOf('clean');
     runTasks[i] = 'clean:build';
     
-    i = runTasks.indexOf('shell');
-    runTasks[i] = 'shell:tscClient';
+    var tscClientIndex = runTasks.indexOf('shell');
+    runTasks[tscClientIndex] = 'shell:tscClient';
     
     i = runTasks.indexOf('copy');
     runTasks[i] = 'copy:public';
@@ -39,6 +39,8 @@ function getRunTasks(config) {
     runTasks.push('shell:tscServer');
     
     runTasks.push('shell:browse');
+
+    var a = runTasks.splice(tscClientIndex + 1, 0, 'shell:webpack');
     
     return runTasks;
 }

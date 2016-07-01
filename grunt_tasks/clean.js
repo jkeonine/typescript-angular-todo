@@ -4,7 +4,7 @@ module.exports = function(pkg) {
         npmTaskName: 'grunt-contrib-clean',
         task: {
             options: { force: true },
-            build: ['js', 'public'],
+            build: ['js/**', 'public'],
             deploy: [pkg.deploymentFolder]
         }    
     };

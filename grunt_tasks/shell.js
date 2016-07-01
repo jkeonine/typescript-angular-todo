@@ -22,6 +22,9 @@ module.exports = function(pkg) {
             },
             tscServer: {
                 command: 'npm run tsc-server'
+            },
+            webpack: {
+                command: 'npm run webpack'
             }
         }  
     };
