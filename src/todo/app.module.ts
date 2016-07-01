@@ -1,7 +1,5 @@
 /// <reference path="../../_references.ts" />
 
-'use strict';
-
 import * as itemStorage from './components/item-storage/module';
 import * as markAll from './components/mark-all/module';
 import * as addInput from './components/add-input/module';

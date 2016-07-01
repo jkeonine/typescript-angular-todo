@@ -1,7 +1,5 @@
 /// <reference path="../../../../_references.ts" />
 
-'use strict';
-
 import * as itemCount from './directive';
 
 export const NAME = 'itemCount';

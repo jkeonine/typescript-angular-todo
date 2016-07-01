@@ -3,8 +3,6 @@
 
 import {$destroy} from '../angular/constants'; 
 
-'use strict';
-
 export const NAME = 'onBlur';
 
 export class directive implements ng.IDirective {

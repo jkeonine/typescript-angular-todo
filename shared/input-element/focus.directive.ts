@@ -3,8 +3,6 @@
 
 import {$timeout} from '../angular/constants'; 
 
-'use strict';
-
 export const NAME = 'onFocus';
 
 export class directive implements ng.IDirective {

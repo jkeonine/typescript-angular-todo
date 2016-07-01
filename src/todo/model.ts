@@ -1,5 +1,3 @@
-'use strict';
-
 export interface IScope extends ng.IScope {
     list: ITodoItem[];
     itemStorage: IItemStorage;

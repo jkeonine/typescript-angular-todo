@@ -5,8 +5,6 @@ import * as keydown from "../../../../shared/input-element/key-down.directive";
 import * as focus from "../../../../shared/input-element/focus.directive";
 import * as blur from "../../../../shared/input-element/blur.directive";
 
-'use strict';
-
 export const NAME = 'itemList';
 
 angular.module(NAME, [])

@@ -3,8 +3,6 @@
 import {IScope, ITodoItem} from "../../../model";
 import * as itemStorage from "../directive";
 
-'use strict'
-
 export const NAME = 'itemStorageShow';
 
 export class directive implements ng.IDirective {

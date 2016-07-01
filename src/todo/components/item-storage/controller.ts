@@ -4,8 +4,6 @@ import {ITodoItem, IStorageService} from "../../model";
 import {$scope} from '../../../../shared/angular/constants'; 
 import * as service from './service'; 
 
-'use strict'
-    
 export default class {
     public list: ITodoItem[];
     public statusFilter: { completed?: boolean };

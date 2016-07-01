@@ -3,8 +3,6 @@
 import {IScope, ITodoItem, Filter} from "../../model";
 import {$scope, $location} from '../../../../shared/angular/constants'; 
 
-'use strict';
-
 const filters: any = {
     '/active': Filter.ACTIVE,
     '/completed': Filter.COMPLETE

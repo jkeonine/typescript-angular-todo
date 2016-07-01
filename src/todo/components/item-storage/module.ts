@@ -1,7 +1,5 @@
 /// <reference path="../../../../_references.ts" />
 
-'use strict'
-
 import * as  show from './show/directive';
 import * as  itemStorage from './directive';
 import * as itemStorageService from './service';

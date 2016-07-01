@@ -3,8 +3,6 @@
 import {IScope, ITodoItem} from "../../model";
 import {$scope} from '../../../../shared/angular/constants'; 
 
-'use strict';
-
 export default class {
 	private editedTodo: ITodoItem;
 	private originalTodo: ITodoItem;

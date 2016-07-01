@@ -3,8 +3,6 @@
 import {IScope, ITodoItem, Filter} from "../../model";
 import {$scope, filterFilter} from '../../../../shared/angular/constants'; 
 
-'use strict';
-
 export default class {
     private allChecked: boolean;
     

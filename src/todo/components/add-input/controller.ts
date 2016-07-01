@@ -3,8 +3,6 @@
 import {$scope} from '../../../../shared/angular/constants'; 
 import {IScope, IAddInputCtrl, ITodoItem} from "../../model";
 
-'use strict';
-
 export default class implements IAddInputCtrl {
     private item: string;
     

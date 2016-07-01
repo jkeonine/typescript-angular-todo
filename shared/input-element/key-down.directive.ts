@@ -3,8 +3,6 @@
 
 import {$destroy} from '../angular/constants'; 
 
-'use strict';
-
 const eventName = 'keydown';
 
 export const NAME = 'onKeyDown';

@@ -4,8 +4,6 @@ import {IScope, ITodoItem} from "../../model";
 import * as itemStorage from "../item-storage/directive"; 
 import * as ctrl from "../add-input/controller";
 
-'use strict';
-
 export const NAME = 'addInput';
 
 export class directive implements ng.IDirective {
