@@ -1,7 +1,7 @@
 /// <reference path="../../typings/browser.d.ts" />
 /// <reference path="../angular/constants.ts" />
 
-var ngConstants = shared.angular.constants;
+import {$timeout} from '../angular/constants'; 
 
 'use strict';
 
@@ -21,7 +21,7 @@ export class directive implements ng.IDirective {
     
     static factory(): ng.IDirectiveFactory {
         var d = ($timeout: ng.ITimeoutService) => new directive($timeout);
-        d.$inject = [ngConstants.$timeout];
+        d.$inject = [$timeout];
         return d;
     }
 }

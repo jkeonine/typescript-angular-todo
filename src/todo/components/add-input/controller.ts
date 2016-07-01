@@ -1,15 +1,14 @@
 /// <reference path="../../../../_references.ts" />
 
+import {$scope} from '../../../../shared/angular/constants'; 
 import {IScope, IAddInputCtrl, ITodoItem} from "../../model";
-
-var ngConstants =  shared.angular.constants; 
 
 'use strict';
 
 export default class implements IAddInputCtrl {
     private item: string;
     
-    static $inject = [ngConstants.$scope];
+    static $inject = [$scope];
     
     constructor(private $scope: IScope) {
         this.item = '';

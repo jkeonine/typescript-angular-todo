@@ -1,7 +1,7 @@
 /// <reference path="../../typings/browser.d.ts" />
 /// <reference path="../angular/constants.ts" />
 
-var ngConstants = shared.angular.constants;
+import {$destroy} from '../angular/constants'; 
 
 'use strict';
 
@@ -18,7 +18,7 @@ export class directive implements ng.IDirective {
             }
         });
 
-        $scope.$on(ngConstants.$destroy, () => { element.unbind(eventName); });
+        $scope.$on($destroy, () => { element.unbind(eventName); });
     };
     
     static factory(): ng.IDirectiveFactory {

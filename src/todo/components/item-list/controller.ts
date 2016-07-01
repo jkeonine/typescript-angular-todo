@@ -1,8 +1,7 @@
 /// <reference path="../../../../_references.ts" />
 
 import {IScope, ITodoItem} from "../../model";
-
-var ngConstants =  shared.angular.constants;
+import {$scope} from '../../../../shared/angular/constants'; 
 
 'use strict';
 
@@ -11,7 +10,7 @@ export default class {
 	private originalTodo: ITodoItem;
 	private reverted: boolean; 
 	
-	static $inject = [ngConstants.$scope];
+	static $inject = [$scope];
 	
 	constructor(private $scope: IScope) {
 		this.editedTodo = null;

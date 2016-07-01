@@ -1,8 +1,7 @@
 /// <reference path="../../../../_references.ts" />
 
 import {IScope, ITodoItem, Filter} from "../../model";
-
-var ngConstants =  shared.angular.constants;
+import {$scope, $location} from '../../../../shared/angular/constants'; 
 
 'use strict';
 
@@ -14,7 +13,7 @@ const filters: any = {
 export default class {
     private path: string;
     
-    static $inject = [ngConstants.$scope, ngConstants.$location];
+    static $inject = [$scope, $location];
     
     constructor($scope: IScope, $location: ng.ILocationService) {
         if ($location.path() === '') $location.path('/');

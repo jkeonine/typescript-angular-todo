@@ -1,7 +1,7 @@
 /// <reference path="../../typings/browser.d.ts" />
 /// <reference path="../angular/constants.ts" />
 
-var ngConstants = shared.angular.constants;
+import {$destroy} from '../angular/constants'; 
 
 'use strict';
 
@@ -11,7 +11,7 @@ export class directive implements ng.IDirective {
     restrict = 'A';
     link = ($scope: ng.IScope, element: ng.IAugmentedJQuery, attributes: IAttributes) => {
         element.bind('blur', () => { $scope.$apply(attributes.onBlur); });
-        $scope.$on(ngConstants.$destroy, () => { element.unbind('blur'); });
+        $scope.$on($destroy, () => { element.unbind('blur'); });
     };
     
     static factory(): ng.IDirectiveFactory {

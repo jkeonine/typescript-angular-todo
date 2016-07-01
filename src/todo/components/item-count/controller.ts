@@ -1,8 +1,7 @@
 /// <reference path="../../../../_references.ts" />
 
 import {IScope, ITodoItem, Filter} from "../../model";
-
-var ngConstants =  shared.angular.constants;
+import {$scope, filterFilter} from '../../../../shared/angular/constants'; 
 
 'use strict';
 
@@ -10,7 +9,7 @@ export default class {
     private completed: number;
     private total: number;
     
-    static $inject = [ngConstants.$scope, ngConstants.filterFilter];
+    static $inject = [$scope, filterFilter];
     
     constructor($scope: IScope,  filter: ng.IFilterFilter) {
         $scope.$watch(() => $scope.itemStorage.list, (list: ITodoItem[]): void => {
