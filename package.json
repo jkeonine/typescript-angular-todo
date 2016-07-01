@@ -18,6 +18,7 @@
     "build": "grunt",
     "tsc-client": "tsc",
     "tsc-server": "tsc -p ./server/tsconfig.json",
+    "webpack": "webpack js/src/todo/app.module.js js/todo.js",
     "start": "forever start -o log/out.log -e log/err.log -a -w js/server.js"
   },
   "author": "",
@@ -38,6 +39,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-shell-spawn": "^0.3.10",
     "typescript": "^1.8.10",
-    "typings": "^0.8.1"
+    "typings": "^0.8.1",
+    "webpack": "^1.13.1"
   }
 }

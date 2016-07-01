@@ -3,8 +3,10 @@
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
-        "sourceMap": true,
-        "target": "es5"
+        "sourceMap": false,
+        "target": "es5",
+        "module": "commonjs",
+        "outDir": "js"
     },
     "files": [
         "src/todo/app.module.ts"
