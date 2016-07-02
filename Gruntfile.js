@@ -1,7 +1,6 @@
 var pkg = require('./package.json');
 
 module.exports = function(grunt) {
-    
     var defaultTasks = [
         require('./grunt_tasks/clean.js')(pkg),
         require('./grunt_tasks/shell.js')(pkg),

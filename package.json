@@ -12,13 +12,11 @@
     "prod": 600
   },
   "scripts": {
-    "postinstall": "bower install",
-    "prepublish": "typings install",
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "build": "grunt",
+    "postinstall": "bower install && typings install",
+    "clean": "rimraf js public",
     "tsc-client": "tsc",
-    "tsc-server": "tsc -p ./server/tsconfig.json",
     "webpack": "webpack js/src/todo/app.module.js js/todo.js",
+    "tsc-server": "tsc -p ./server/tsconfig.json",
     "start": "forever start -o log/out.log -e log/err.log -a -w js/server.js"
   },
   "author": "",
@@ -38,6 +36,7 @@
     "grunt-contrib-uglify": "^0.11.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-shell-spawn": "^0.3.10",
+    "rimraf": "^2.5.2",
     "typescript": "^1.8.10",
     "typings": "^0.8.1",
     "webpack": "^1.13.1"
