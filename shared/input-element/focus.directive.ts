@@ -1,5 +1,4 @@
 /// <reference path="../../typings/browser.d.ts" />
-/// <reference path="../angular/constants.ts" />
 
 import {$timeout} from '../angular/constants'; 
 
