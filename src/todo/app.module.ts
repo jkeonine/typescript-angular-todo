@@ -1,5 +1,3 @@
-/// <reference path="../../typings/browser.d.ts" />
-
 import * as itemStorage from './components/item-storage/module';
 import * as markAll from './components/mark-all/module';
 import * as addInput from './components/add-input/module';

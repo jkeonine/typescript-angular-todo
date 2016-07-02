@@ -1,5 +1,3 @@
-/// <reference path="../../typings/browser.d.ts" />
-
 import {$destroy} from '../angular/constants'; 
 
 export const NAME = 'onBlur';

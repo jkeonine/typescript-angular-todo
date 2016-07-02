@@ -9,6 +9,7 @@
         "outDir": "../../js"
     },
     "files": [
+        "../../typings/browser.d.ts",
         "app.module.ts"
-    ]   
+    ]
 }
