@@ -9,6 +9,7 @@
         "outDir": "../js"
     },
     "files": [
+        "../typings/main.d.ts",
         "server.ts"
     ]   
 }
