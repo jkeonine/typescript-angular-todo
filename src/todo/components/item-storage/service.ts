@@ -1,5 +1,3 @@
-/// <reference path="../../../../_references.ts" />
-
 import {ITodoItem, IStorageService} from '../../model';
 
 export const NAME = 'itemStorageService';

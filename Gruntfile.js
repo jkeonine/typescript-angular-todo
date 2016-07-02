@@ -1,51 +1,22 @@
+var pkg = require('./package.json');
+
 module.exports = function(grunt) {
-    var pkg = grunt.file.readJSON('package.json');
     
     var defaultTasks = [
         require('./grunt_tasks/clean.js')(pkg),
         require('./grunt_tasks/shell.js')(pkg),
         require('./grunt_tasks/uglify.js')(pkg),
-        require('./grunt_tasks/copy.js')(pkg)
+        require('./grunt_tasks/copy.js')(pkg),
+        require('./grunt_tasks/watch.js')
     ];
     var config = {};
-    defaultTasks.forEach(function(task) {
-        setTask(config, task, grunt); 
+    defaultTasks.forEach(function(task) { 
+        config[task.taskName] = task.task;
+        grunt.loadNpmTasks(task.npmTaskName);
     });
 	grunt.initConfig(config);
     
-    var runTasks = getRunTasks(config);
-	grunt.registerTask('default', runTasks);	
-    
-    var copy = require('./grunt_tasks/copy.js')(pkg);
-    setTask(config, copy, grunt);
+	grunt.registerTask('default', ['clean:build', 'shell:tscClient', 'shell:webpack', 'uglify', 'copy:public', 'shell:tscServer', 'shell:browse']);	
     grunt.registerTask('deploy', ['clean:build', 'ts', 'uglify', 'clean:deploy', 'copy:deploy', 'shell:deploy']);
-    
-    var watch = require('./grunt_tasks/watch.js');
-    setTask(config, watch, grunt);
-    grunt.registerTask('dev', ['default', watch.taskName]);    
-}
-
-function getRunTasks(config) {
-    var runTasks = Object.keys(config);
-    var i = runTasks.indexOf('clean');
-    runTasks[i] = 'clean:build';
-    
-    var tscClientIndex = runTasks.indexOf('shell');
-    runTasks[tscClientIndex] = 'shell:tscClient';
-    
-    i = runTasks.indexOf('copy');
-    runTasks[i] = 'copy:public';
-    
-    runTasks.push('shell:tscServer');
-    
-    runTasks.push('shell:browse');
-
-    var a = runTasks.splice(tscClientIndex + 1, 0, 'shell:webpack');
-    
-    return runTasks;
-}
-
-function setTask(config, task, grunt) {
-    config[task.taskName] = task.task;
-    grunt.loadNpmTasks(task.npmTaskName);
+    grunt.registerTask('dev', ['default', 'watch']);    
 }

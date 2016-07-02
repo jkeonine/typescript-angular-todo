@@ -1,5 +1,3 @@
-/// <reference path="../../../../_references.ts" />
-
 import * as addInput from "./directive";
 
 export const NAME = 'addInput';

@@ -1,5 +1,3 @@
-/// <reference path="../../../../_references.ts" />
-
 import * as itemStorage from '../item-storage/directive';
 import * as ctrl from './controller';
 

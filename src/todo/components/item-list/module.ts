@@ -1,5 +1,3 @@
-/// <reference path="../../../../_references.ts" />
-
 import * as itemList from "./directive";
 import * as keydown from "../../../../shared/input-element/key-down.directive";
 import * as focus from "../../../../shared/input-element/focus.directive";

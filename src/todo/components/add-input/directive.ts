@@ -1,5 +1,3 @@
-/// <reference path="../../../../_references.ts" />
-
 import {IScope, ITodoItem} from "../../model";
 import * as itemStorage from "../item-storage/directive"; 
 import * as ctrl from "../add-input/controller";

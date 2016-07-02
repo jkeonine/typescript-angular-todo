@@ -1,5 +1,3 @@
-/// <reference path="../../../../_references.ts" />
-
 import * as itemCount from './directive';
 
 export const NAME = 'itemCount';

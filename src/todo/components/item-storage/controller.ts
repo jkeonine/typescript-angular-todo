@@ -1,5 +1,3 @@
-/// <reference path="../../../../_references.ts" />
-
 import {ITodoItem, IStorageService} from "../../model";
 import {$scope} from '../../../../shared/angular/constants'; 
 import * as service from './service'; 

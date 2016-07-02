@@ -1,5 +1,3 @@
-/// <reference path="../../../../_references.ts" />
-
 import {IScope, ITodoItem} from "../../model";
 import {$scope} from '../../../../shared/angular/constants'; 
 

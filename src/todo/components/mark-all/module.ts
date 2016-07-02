@@ -1,5 +1,3 @@
-/// <reference path="../../../../_references.ts" />
-
 import * as markAll from "./directive";    
 
 export const NAME = 'markAll';

@@ -1,5 +1,3 @@
-/// <reference path="../../../../_references.ts" />
-
 import * as ctrl from "./controller";
 
 export const NAME = 'itemStorage';

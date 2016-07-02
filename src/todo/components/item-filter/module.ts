@@ -1,5 +1,3 @@
-/// <reference path="../../../../_references.ts" />
-
 import * as itemFilter from './directive';
 
 export const NAME = 'itemFilter';

@@ -1,5 +1,3 @@
-/// <reference path="../../../../_references.ts" />
-
 import * as clearCompleted from './directive';
 
 export const NAME = 'clearCompleted';
