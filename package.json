@@ -7,7 +7,7 @@
     "postinstall": "typings install",
     "clean": "rimraf js public",
     "tsc-client": "tsc -p ./client/todo/tsconfig.json",
-    "bundle": "webpack js/client/todo/app.module.js js/todo.js",
+    "bundle": "webpack",
     "minify": "uglifyjs -c -m -o js/todo.min.js js/todo.js",
     "copy": "copyfiles -f ./node_modules/angular/angular.min.js ./node_modules/todomvc-common/base.js ./node_modules/todomvc-common/base.css ./node_modules/todomvc-app-css/index.css ./js/todo.min.js public",
     "tsc-server": "tsc -p ./server/tsconfig.json",
