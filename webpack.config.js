@@ -1,9 +1,11 @@
+var config = require('./package').config;
+
 module.exports = {
     entry: {
-        todo: './js/client/todo/app.module.js'
+        todo: './'+config.outputDir+'/client/todo/app.module.js'
     },
     output: {
         filename: '[name].js',
-        path: './js'
+        path: './'+config.outputDir
     }
 };

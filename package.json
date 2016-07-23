@@ -3,17 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "config": {
+    "outputDir": "js",
+    "publicDir": "public"
+  },
   "scripts": {
     "postinstall": "typings install",
-    "clean": "rimraf js public",
+    "clean": "rimraf %npm_package_config_outputDir% %npm_package_config_publicDir%",
     "tsc-client": "tsc -p ./client/todo/tsconfig.json",
     "bundle": "webpack",
-    "minify": "uglifyjs -c -m -o js/todo.min.js js/todo.js",
-    "copy": "copyfiles -f ./node_modules/angular/angular.min.js ./node_modules/todomvc-common/base.js ./node_modules/todomvc-common/base.css ./node_modules/todomvc-app-css/index.css ./js/todo.min.js public",
+    "minify": "uglifyjs -c -m -o %npm_package_config_outputDir%/todo.min.js %npm_package_config_outputDir%/todo.js",
+    "copy": "copyfiles -f ./node_modules/angular/angular.min.js ./node_modules/todomvc-common/base.js ./node_modules/todomvc-common/base.css ./node_modules/todomvc-app-css/index.css ./%npm_package_config_outputDir%/todo.min.js %npm_package_config_publicDir%",
     "tsc-server": "tsc -p ./server/tsconfig.json",
-    "build": "npm run clean && npm run tsc-client && npm run bundle && npm run minify",
-    "server": "npm run tsc-server && node js/server.js",
-    "start": "npm run build && npm run copy && npm run server"
+    "prebuild": "npm run clean",
+    "build": "npm run tsc-client && npm run bundle",
+    "postbuild": "npm run minify && npm run copy",
+    "server": "npm run tsc-server && node %npm_package_config_outputDir%/server.js",
+    "start": "npm run build && npm run server"
   },
   "author": "",
   "license": "ISC",
