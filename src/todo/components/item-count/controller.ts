@@ -2,8 +2,8 @@ import {IScope, ITodoItem, Filter} from "../../model";
 import {$scope, filterFilter} from '../../../../shared/angular/constants'; 
 
 export default class {
-    private completed: number;
-    private total: number;
+    completed: number;
+    total: number;
     
     static $inject = [$scope, filterFilter];
     
