@@ -1,7 +1,7 @@
 # typescript-angular-todo
 'npm install' to download dependencies
 
-'npm start' to build js assets and run server http://localhost:500/
+'npm start' to build js assets and run server
 
 Angular app written in Typescript using ES6 modules. 
 
