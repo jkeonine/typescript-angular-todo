@@ -8,7 +8,6 @@
     "sourceDir": "src"
   },
   "scripts": {
-    "postinstall": "typings install",
     "clean": "rimraf %npm_package_config_outputDir%",
     "tsc": "tsc",
     "bundle": "webpack",
@@ -22,13 +21,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/angular": "^1.6.0",
     "angular": "^1.5.7",
     "http-server": "^0.9.0"
   },
   "devDependencies": {
     "rimraf": "^2.5.2",
-    "typescript": "^1.8.10",
-    "typings": "^0.8.1",
+    "typescript": "^2.1.5",
     "uglify-js": "^2.6.4",
     "webpack": "^1.13.1"
   }

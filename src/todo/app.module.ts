@@ -5,6 +5,7 @@ import * as itemList from './components/item-list/module';
 import * as itemCount from './components/item-count/module';
 import * as itemFilter from './components/item-filter/module';
 import * as clearCompleted from './components/clear-completed/module';
+import * as angular from 'angular';
 
 var components = [
     itemStorage.NAME,

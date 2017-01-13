@@ -8,8 +8,5 @@
         "module": "commonjs",
         "outDir": "js"
     },
-    "files": [
-        "./typings/browser.d.ts",
-        "./src/todo/app.module.ts"
-    ]
+    "files": ["./src/todo/app.module.ts"]
 }

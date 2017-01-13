@@ -1,5 +1,6 @@
 import {IScope, ITodoItem} from "../../model";
 import {$scope} from '../../../../shared/angular/constants'; 
+import * as angular from 'angular';
 
 export default class {
 	private editedTodo: ITodoItem;

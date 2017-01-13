@@ -1,4 +1,5 @@
 import * as clearCompleted from './directive';
+import * as angular from 'angular';
 
 export const NAME = 'clearCompleted';
 

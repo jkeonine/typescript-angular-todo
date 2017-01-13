@@ -1,4 +1,5 @@
 import * as addInput from "./directive";
+import * as angular from 'angular';
 
 export const NAME = 'addInput';
 

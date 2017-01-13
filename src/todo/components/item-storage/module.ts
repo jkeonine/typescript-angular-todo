@@ -1,6 +1,7 @@
 import * as  show from './show/directive';
 import * as  itemStorage from './directive';
 import * as itemStorageService from './service';
+import * as angular from 'angular';
 
 export const NAME = 'itemStorage';
 

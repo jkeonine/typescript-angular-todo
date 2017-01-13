@@ -1,4 +1,5 @@
 import * as markAll from "./directive";    
+import * as angular from 'angular';
 
 export const NAME = 'markAll';
 
